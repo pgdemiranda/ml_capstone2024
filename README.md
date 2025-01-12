@@ -1,15 +1,10 @@
 # FIPE Table - Historical Vehicle Price Data
 ## Overview
-The FIPE Table's primary function is to calculate the average prices of vehicles (cars, motorcycles, and trucks) for each model and version across Brazil. 
-It serves as the main reference for negotiations or valuations, offering consumers guidance on what constitutes a fair buying or selling price for a given vehicle.
+This Regression Machine Learning project was developed as part of the DataTalks Machine Learning Zoomcamp certification (2024 cohort). Its objective is to predict the values of second-hand cars based on their year of manufacture, brand, and model, using the FIPE Table—the standard reference for vehicle pricing in Brazil.
 
-The values are estimated based on a survey of vehicle prices and are updated monthly. 
-The prices reflect the average values being negotiated in the market, with adjustments depending on variables such as the vehicle's condition, manufacturer, year, model, region, optional features, color, and other relevant factors.
+The FIPE Table's primary function is to calculate the average prices of vehicles (cars, motorcycles, and trucks) for each model and version across Brazil. It serves as the main reference for negotiations or valuations, offering consumers guidance on what constitutes a fair buying or selling price for a given vehicle. The values are estimated based on a survey of vehicle prices and are updated monthly. The prices reflect the average values being negotiated in the market, with adjustments depending on variables such as the vehicle's condition, manufacturer, year, model, region, optional features, color, and other relevant factors. In addition to being a benchmark for retailers and dealers, the FIPE Table is used by insurance companies to calculate indemnities in cases of theft or total loss, as well as for insurance policy pricing and tax calculations, such as the IPVA (Vehicle Property Tax).
 
-In addition to being a benchmark for retailers and dealers, the FIPE Table is used by insurance companies to calculate indemnities in cases of theft or total loss, as well as for insurance policy pricing and tax calculations, such as the IPVA (Vehicle Property Tax).
-
-
-1. The FIPE Table expresses average prices for cash transactions in resale markets targeting individual consumers (natural persons) across Brazil. It is intended as a negotiation or valuation parameter. Actual transaction prices may vary depending on the region, vehicle condition, color, accessories, or other factors influencing supply and demand for a specific vehicle.
+1. The FIPE Table expresses average prices for cash transactions in resale markets targeting individual consumers across Brazil. It is intended as a negotiation or valuation parameter. Actual transaction prices may vary depending on the region, vehicle condition, color, accessories, or other factors influencing supply and demand for a specific vehicle.
 2. The vehicle year refers to the model year, excluding vehicles designed for professional or special purposes.
 3. Prices are expressed in BRL (Brazilian reais) for the referenced month and year.
 
@@ -28,7 +23,10 @@ This project uses Poetry as the package manager instead of Pipenv. Consequently,
 Similar to the approach taken in the Midterm project, instead of using the `DictVectorizer` class to transform feature-value mappings into vectors, the `Pipeline` class was used. This approach allows for the application of various encoding methods while maintaining a structured and organized transformation workflow for the dataset.
 
 3. Hyperparameter Tuning and Cross-Validation
-All parameter evaluation and cross-validation were conducted using the `GridSearchCV` function from Scikit-Learn. While the instructions remained consistent with standard practices, the implementation leveraged this single, versatile method to streamline the process.
+All parameter evaluation and cross-validation were conducted using different techniques such as `GridSearchCV`, `BayesianSearchCV` functions from Scikit-Learn and Scikit Optimizer, and even simple hold-out dataset. While the instructions remained consistent with standard practices, the implementation leveraged this single, versatile method to streamline the process.
+
+4. Separate Notebooks
+To accommodate the unique preprocessing requirements of different Machine Learning models, separate notebooks were created. The first notebook focuses on linear models, the second covers tree-based and gradient-boosting models, and the third is dedicated to a neural network. This structure was designed to keep the workflows organized and should be considered during the project evaluation. Details of the entire process are provided in the notebook subsection below.
 
 ## Dataset
 The dataset provides a historical record of vehicle prices extracted from the official FIPE (Fundação Instituto de Pesquisas Econômicas) Table through its public consultation platform: [FIPE Vehicle Prices](). The dataset for this project was downloaded from [Tabela Fipe - Histórico de Preços Kaggle Competition](https://www.kaggle.com/datasets/franckepeixoto/tabela-fipe?select=tabela-fipe-historico-precos.csv) and contains 
@@ -51,6 +49,19 @@ The dataset provides a historical record of vehicle prices extracted from the of
 | **Feature** | **Description**                     |  
 |-------------|-------------------------------------|  
 | `valor`     | The average price of the vehicle.   |  
+
+## Tools
+- Poetry
+- Python 3.10
+- PyTorch
+- Docker
+- Kubernetes
+
+## Requirements
+The Python dependencies required to run this project are specified in the [pyproject.toml](./pyproject.toml) file. Additionally, Docker and Kubernetes must be installed to execute the full scope of the project.
+
+## <span style="color:red">**How to reproduce this project?**</span>
+
 
 ## Notebooks  
 As this is an iterative process, different notebooks were produced to train various models and experiment with different approaches.  
