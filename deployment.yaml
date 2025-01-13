@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
       - name: fastapi-server
-        image: username/fastapi-server:latest
+        image: fastapi-server:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 8000
